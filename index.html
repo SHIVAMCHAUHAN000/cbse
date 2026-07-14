@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Secondary School Examination (Class X) 2025</title>
 <style>
+    * {
+        box-sizing: border-box;
+    }
+
     body {
         font-family: Arial, Verdana, Helvetica, sans-serif;
         font-size: 14px;
@@ -12,82 +16,114 @@
         margin: 0;
         background-color: #ffffff;
     }
+
     header {
         background-color: #00ced1;
-        display: flex;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
         align-items: center;
-        padding: 10px;
+        gap: 12px;
+        padding: 10px 14px;
     }
-    header img {
-        height: 60px;
-        margin-right: 10px;
+
+    .brand-mark {
+        width: 62px;
+        height: 62px;
+        border: 2px solid #ffffff;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        color: #ffffff;
+        font-weight: 700;
+        letter-spacing: 0;
+        background: #057c90;
     }
-    header div {
-        flex-grow: 1;
+
+    .brand-text {
+        color: #ffffff;
+        line-height: 1.35;
     }
+
+    .brand-text strong {
+        display: block;
+        font-size: 1rem;
+    }
+
     header .url {
         text-align: right;
         font-weight: bold;
         font-size: 1rem;
         color: #ffffff;
+        white-space: nowrap;
     }
+
     main {
         width: 90%;
         max-width: 800px;
         margin: 20px auto;
     }
+
     h1 {
         text-align: center;
         color: #3333cc;
         font-size: 1.4rem;
+        line-height: 1.35;
     }
-    .result-info, .student-info {
+
+    .result-info,
+    .student-info {
         margin-top: 20px;
     }
+
     .student-info table {
         width: 100%;
         border-collapse: collapse;
         margin-bottom: 20px;
     }
+
     .student-info td {
         padding: 8px;
     }
+
     .result-table {
         width: 100%;
         border-collapse: collapse;
         margin-bottom: 20px;
     }
-    .result-table th, .result-table td {
+
+    .result-table th,
+    .result-table td {
         border: 1px solid #000;
         padding: 8px;
         text-align: center;
     }
+
     .result-table th {
         background-color: mediumblue;
         color: white;
     }
+
     .result-footer {
         background-color: mediumblue;
         color: white;
         padding: 8px;
         text-align: left;
     }
-    .note, .disclaimer {
+
+    .note,
+    .disclaimer {
         text-align: center;
         margin-top: 20px;
         font-size: 0.9rem;
         color: red;
     }
-    .print-button {
-        display: block;
-        margin: 10px 0;
-        text-align: left;
-    }
-    .print-button a {
+
+    .check-link {
         color: #3333cc;
-        text-decoration: none;
-        font-weight: bold;
+        text-decoration: underline;
+        font-weight: 700;
     }
+
     footer {
         background-color: #c2dbf8;
         padding: 10px;
@@ -98,17 +134,26 @@
 
     @media (max-width: 600px) {
         header {
-            flex-direction: column;
+            grid-template-columns: 1fr;
+            justify-items: center;
             text-align: center;
         }
+
         header .url {
             text-align: center;
-            margin-top: 10px;
+            white-space: normal;
         }
-        .result-table th, .result-table td {
-            font-size: 0.8rem;
+
+        .result-table {
+            font-size: 0.78rem;
+        }
+
+        .result-table th,
+        .result-table td {
             padding: 6px;
+            word-break: break-word;
         }
+
         .student-info td {
             font-size: 0.85rem;
         }
@@ -118,21 +163,16 @@
 <body>
 
 <header>
-    <img src="C:\Users\shiva\Downloads\cbse-LOGO.webp" alt="CBSE Logo">
-    <div>
-        <img src="C:\Users\shiva\OneDrive\Pictures\Screenshots\Screenshot 2025-05-14 115007.png" alt="CBSE Hindi">
-        
+    <div class="brand-mark" aria-label="CBSE">CBSE</div>
+    <div class="brand-text">
+        <strong>Central Board of Secondary Education</strong>
+        Secondary School Examination Results
     </div>
-    <div class="url">
-        http://cbseresults.nic.in
-    </div>
+    <div class="url">http://cbseresults.nic.in</div>
 </header>
 
 <main>
     <h1>CENTRAL BOARD OF SECONDARY EDUCATION<br>Secondary School Examination (Class X) 2025</h1>
-
-    <div class="print-button">
-    </div>
 
     <section class="student-info">
         <table>
@@ -159,7 +199,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>184</td><td>ENGLISH LNG & LIT.</td><td>065</td><td>020</td><td>085</td><td>A2</td>
+                    <td>184</td><td>ENGLISH LNG &amp; LIT.</td><td>065</td><td>020</td><td>085</td><td>A2</td>
                 </tr>
                 <tr>
                     <td>122</td><td>SANSKRIT</td><td>058</td><td>020</td><td>078</td><td>B2</td>
@@ -179,9 +219,9 @@
     </section>
 
     <div class="note">
-        <p><a href="ClassTenth_po_2025.htm" style="color:#3333cc; text-decoration:underline;">Check Another Result</a></p>
+        <p><a class="check-link" href="./">Check Another Result</a></p>
         <p><b>Note:</b><br>
-        R.L. - Result Later, N.E. - Not Eligible, R.W. - Result Withheld, ABST - Absent, COMP – Compartment, UFM - Unfairmeans, XXXX - Improvement, SJD - Subjudice, N.R. - Not Registered</p>
+        R.L. - Result Later, N.E. - Not Eligible, R.W. - Result Withheld, ABST - Absent, COMP - Compartment, UFM - Unfairmeans, XXXX - Improvement, SJD - Subjudice, N.R. - Not Registered</p>
     </div>
 
     <div class="disclaimer">
@@ -190,7 +230,7 @@
 </main>
 
 <footer>
-    Designed, Developed and Hosted by Shivam Kumar Singh A WEB DEVELOPER 
+    Designed, Developed and Hosted by Shivam Kumar Singh A WEB DEVELOPER
 </footer>
 
 </body>
